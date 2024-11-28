@@ -8,12 +8,12 @@ on:
     inputs:
       workoutsToDownload:
         type: number
-        default: "5"
+        default: "3"
       saveLocalCopy:
         type: boolean
         default: false
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 1 * * *'
 
 jobs:
   sync:
@@ -27,7 +27,7 @@ jobs:
     - run: mkdir -p ${{ env.OUTPUT_DIR }}
     - name: Create config file
       env:
-        DEFAULT_WORKOUT_NUM: 5
+        DEFAULT_WORKOUT_NUM: 3
       run: |
         cat <<EOT > /app/configuration.local.json 
         {
