@@ -27,7 +27,7 @@ jobs:
     - run: mkdir -p ${{ env.OUTPUT_DIR }}
     - name: Create config file
       env:
-        DEFAULT_WORKOUT_NUM: 1
+        DEFAULT_WORKOUT_NUM: 5
       run: |
         cat <<EOT > /app/configuration.local.json 
         {
