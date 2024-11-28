@@ -8,7 +8,7 @@ on:
     inputs:
       workoutsToDownload:
         type: number
-        default: "3"
+        default: "5"
       saveLocalCopy:
         type: boolean
         default: false
@@ -27,11 +27,11 @@ jobs:
     - run: mkdir -p ${{ env.OUTPUT_DIR }}
     - name: Create config file
       env:
-        DEFAULT_WORKOUT_NUM: 3
+        DEFAULT_WORKOUT_NUM: 5
       run: |
         cat <<EOT > /app/configuration.local.json 
         {
-            "Developer": {
+           "Developer": {
              "UserAgent": "GCM-iOS-5.7.2.1"
           },
           "App": {
